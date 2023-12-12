@@ -108,7 +108,7 @@ If the bug fix you need isn't in a released version or If you want to build this
 3. Pull relevant packages, install dependencies, compile, and source the workspace by using:
    ```
    cd $COLCON_WS
-   git clone https://github.com/PickNikRobotics/ros2_kortex.git src/ros2_kortex
+   git clone https://github.com/reindeererobotics/ros2_kortex.git src/ros2_kortex
    rosdep install --ignore-src --from-paths src -y -r
    colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
    source install/setup.bash
