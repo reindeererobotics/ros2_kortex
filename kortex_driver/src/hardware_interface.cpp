@@ -1014,11 +1014,11 @@ void KortexMultiInterfaceHardware::sendGripperCommand(
 
 void KortexMultiInterfaceHardware::sendTwistCommand()
 {
-  k_api_twist_->set_linear_x(static_cast<float>(twist_commands_[0]));
-  k_api_twist_->set_linear_y(static_cast<float>(twist_commands_[1]));
-  k_api_twist_->set_linear_z(static_cast<float>(twist_commands_[2]));
-  k_api_twist_->set_angular_x(static_cast<float>(twist_commands_[3]));
-  k_api_twist_->set_angular_y(static_cast<float>(twist_commands_[4]));
+  k_api_twist_->set_linear_x(static_cast<float>(-twist_commands_[1]));
+  k_api_twist_->set_linear_y(static_cast<float>(twist_commands_[0]));
+  k_api_twist_->set_linear_z(static_cast<float>(-twist_commands_[2]));
+  k_api_twist_->set_angular_x(static_cast<float>(twist_commands_[4]));
+  k_api_twist_->set_angular_y(static_cast<float>(twist_commands_[3]));
   k_api_twist_->set_angular_z(static_cast<float>(twist_commands_[5]));
   base_.SendTwistCommand(k_api_twist_command_);
 }
