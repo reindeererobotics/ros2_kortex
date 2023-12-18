@@ -7,7 +7,9 @@
     fake_sensor_commands:=false
     sim_ignition:=false
     sim_isaac:=false
-    use_internal_bus_gripper_comm:=true">
+    isaac_joint_commands:=/isaac_joint_commands
+    isaac_joint_states:=/isaac_joint_states
+    use_internal_bus_gripper_comm:=false">
     <xacro:include filename="$(find robotiq_description)/urdf/robotiq_2f_85_macro.urdf.xacro" />
 
     <!-- Hardware talks directly to the gripper so we don't need ros2_control unless we are simulating -->
@@ -20,10 +22,12 @@
         prefix="${prefix}"
         parent="${parent}"
         include_ros2_control="${include_ros2_control}"
-        use_fake_hardware="$(arg use_fake_hardware)"
-        fake_sensor_commands="$(arg fake_sensor_commands)"
-        sim_ignition="$(arg sim_ignition)"
-        sim_isaac="$(arg sim_isaac)">
+        use_fake_hardware="${use_fake_hardware}"
+        fake_sensor_commands="${fake_sensor_commands}"
+        sim_ignition="${sim_ignition}"
+        sim_isaac="${sim_isaac}"
+        isaac_joint_commands="${isaac_joint_commands}"
+        isaac_joint_states="${isaac_joint_states}">
         <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:robotiq_gripper>
   </xacro:macro>
